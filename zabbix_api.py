@@ -284,7 +284,7 @@ class ZabbixAPI(object):
             http_handler = urllib2.HTTPHandler(debuglevel=0)
             opener = urllib2.build_opener(http_handler)
         else:
-            raise ZabbixAPIException("Unknow protocol %s" % self.proto)
+            raise ZabbixAPIException("Unknown protocol %s" % self.proto)
 
         urllib2.install_opener(opener)
         try:
