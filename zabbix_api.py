@@ -276,6 +276,7 @@ class ZabbixAPI(object):
         self.debug(logging.INFO, "Sending: " + str(json_obj))
         self.debug(logging.DEBUG, "Sending headers: " + str(headers))
 
+        urllib2.ProxyHandler()
         request = urllib2.Request(url=self.url, data=json_obj.encode('utf-8'), headers=headers)
         if self.proto == "https":
             https_handler = urllib2.HTTPSHandler(debuglevel=0)
